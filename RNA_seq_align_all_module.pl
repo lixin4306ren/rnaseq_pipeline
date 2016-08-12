@@ -40,7 +40,7 @@ $gene_model="RefGene";
 if ($step eq 'align') {
 open O,">align.sh"||die;
 chomp($out_dir);
-my $cmd="perl ~xli/scripts/Run_OSA_all_modules.pl $sample_list $out_dir $ref_dir $ref $gene_model";
+my $cmd="perl ~xli/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl $sample_list $out_dir $ref_dir $ref $gene_model";
 my $cmd2=`$cmd`;
 print O $cmd2,"\n";
 
