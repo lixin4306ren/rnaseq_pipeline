@@ -42,9 +42,12 @@ kallisto index -i transcripts.idx transcripts.fasta.gz
 ```
 kallisto quant -i ~/data/cDNA/Homo_sapiens.GRCh38.rel79.cdna.all.idx -o S1 -t 2 -b 100 ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R1.fastq.gz ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R2.fastq.gz
 ```
+此步会生成`abundance.tsv`文件，包含各个转录本的表达量。
+
 ## 生成gene level的FPKM
 使用R package [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html)
 ```
+library(tximport)
 dir<-"./sleuth"                   #sleuth目录下保存上步各个样品的kallisto运行结果
 samplePath<-"./sample.list"       #所有样品list
 read.table(samplePath,header=T)->sampleInfor
