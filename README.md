@@ -27,7 +27,7 @@ perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list
 ```
 perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list ./ /home/others/xli/data/genome Mouse.mm10 Ensembl.R80
 ```
-生成`align.sh`文件和响应的`*.oscript`文件。用`qsub`提交`align.sh`运行alignment步骤。完成后所有结果在`/home/others/xli/RNA-Seq/sample_name`目录。
+会生成`align.sh`文件和响应的`*.oscript`文件。用`qsub`提交`align.sh`运行alignment步骤。完成后所有结果在`output_dir/sample_name`目录。
 
 
 
