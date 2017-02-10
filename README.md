@@ -42,6 +42,17 @@ kallisto index -i transcripts.idx transcripts.fasta.gz
 ```
 kallisto quant -i ~/data/cDNA/Homo_sapiens.GRCh38.rel79.cdna.all.idx -o S1 -t 2 -b 100 ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R1.fastq.gz ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R2.fastq.gz
 ```
-
+## 生成gene level的FPKM
+使用R package [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html)
+```
+dir<-"./sleuth"                   #sleuth目录下保存上步各个样品的`kallisto`运行结果
+samplePath<-"./sample.list"       #所有样品list
+read.table(samplePath,header=T)->sampleInfor
+files <- file.path(dir,  sampleInfor[,1], "abundance.tsv")
+names(files) <-  as.vector(sampleInfor[,1])
+load(t2gPath)
+txi <- tximport(files, type = "kallisto", tx2gene = t2g, reader = read_tsv)
+save(txi,file="txi.rda")          #`txi.rda`保存结果用于后续基因表达差异分析
+```
 
 
