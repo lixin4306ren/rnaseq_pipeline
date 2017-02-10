@@ -2,7 +2,7 @@
 ## 安装
 此流程依赖于array suite，安装array suite参考此[网页](http://www.arrayserver.com/wiki/index.php?title=Oshell#Overview)。
 
-## 主要参数
+## 使用
 主程序为`Run_OSA_all_modules.pl`，主要参数用法：
 ```
 perl Run_OSA_all_modules.pl sample.list [output_dir] [database_dir] [genome_version] [gene_model_version]
@@ -18,7 +18,7 @@ perl Run_OSA_all_modules.pl sample.list [output_dir] [database_dir] [genome_vers
 基因组和基因注释版本对应信息参考此[网页](http://www.arrayserver.com/wiki/index.php?title=A_list_of_compiled_genome_and_gene_model_from_OmicSoft)
 
 
-## alignment
+## 举例
 如果是human  
 ```
 perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list
@@ -31,14 +31,14 @@ perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list ./ /home/other
 
 
 
-## kmer-baased alignment free的RNA-Seq分析流程
+# kmer-baased alignment free的RNA-Seq分析流程
 本流程基于软件[kallisto](https://pachterlab.github.io/kallisto/)。
-### index genome
+## index genome
 可以此[链接](http://bio.math.berkeley.edu/kallisto/transcriptomes/)下载常用的cDNA序列。
 ```
 kallisto index -i transcripts.idx transcripts.fasta.gz
 ```
-### quantification
+## quantification
 ```
 kallisto quant -i ~/data/cDNA/Homo_sapiens.GRCh38.rel79.cdna.all.idx -o S1 -t 2 -b 100 ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R1.fastq.gz ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R2.fastq.gz
 ```
