@@ -28,7 +28,7 @@ while (<IN>) {
         closedir DIR;
 
 
-print "mono /home/others/xli/soft/oshell/16-8-11/oshell.exe --runscript $ref_dir $pwd/$sample_name.oscript /tmp/ /opt/apps/mono/bin/mono\n";
+print "mono /home/others/xli/soft/oshell/16-8-11/oshell.exe --runscript $ref_dir $pwd/$sample_name.oscript ./ /opt/apps/mono/bin/mono\n";
 
 open O,">$pwd/$sample_name.oscript"||die;
 

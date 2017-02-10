@@ -3,45 +3,25 @@
 此流程依赖于array suite，安装array suite参考此[网页](http://www.arrayserver.com/wiki/index.php?title=Oshell#Overview)。
 
 ## 主要参数
-主程序为`RNA_seq_align_all_module.pl`，用`-h`显示所有参数如下：
+主程序为`Run_OSA_all_modules.pl`，主要参数用法：
 ```
-        RNA-Seq pipeline
-
-        Usage: RNA_seq_align_all_module.pl <options>
-
-                -sample_list        sample list
-
-                -out_dir            output result folder
-
-                -ref_dir            reference OSA base path
-
-                -ref                reference name
-
-                -gene_model         gene_model name
-
-                -gtf                gene gtf file
-
-                -gtf_exon           exon gff file for DEXSeq
-
-                -step               align or merge_rmdup or count or count_exon or tdf
-
-                -h or -help         Show Help , have a choice
+perl Run_OSA_all_modules.pl sample.list [output_dir] [database_dir] [genome_version] [gene_model_version]
 ```
-
 
 `sample.list`为所有样品目录路径，目录下为fastq.gz文件，格式如下：  
 ```
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S1
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S2
 ```
-`-ref`默认基因组版本Human.B37.3  
-`-gene_model`默认版本为RefGene  
+`genome_version`默认基因组版本Human.B37.3  
+`gene_model_version`默认版本为RefGene  
 基因组和基因注释版本对应信息参考此[网页](http://www.arrayserver.com/wiki/index.php?title=A_list_of_compiled_genome_and_gene_model_from_OmicSoft)
 
 
 ## alignment
-如何是human  
+如果是human  
 ```
+perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list
 ```
 如果是其他物种，需指明所用genome版本和gene model版本，例如mouse  
 ```
