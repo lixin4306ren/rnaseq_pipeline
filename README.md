@@ -13,17 +13,17 @@ perl Run_OSA_all_modules.pl sample.list [output_dir] [database_dir] [genome_vers
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S1
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S2
 ```
-`genome_version`默认基因组版本Human.B37.3  
-`gene_model_version`默认版本为RefGene  
+`genome_version`默认基因组版本`Human.B37.3`
+`gene_model_version`默认版本为`RefGene`
 基因组和基因注释版本对应信息参考此[网页](http://www.arrayserver.com/wiki/index.php?title=A_list_of_compiled_genome_and_gene_model_from_OmicSoft)
 
 
 ## 举例
-如果是human  
+如果是`human`  
 ```
 perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list
 ```
-如果是其他物种，需指明所用genome版本和gene model版本，例如mouse  
+如果是其他物种，需指明所用genome版本和gene model版本，例如`mouse`  
 ```
 perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list ./ /home/others/xli/data/genome Mouse.mm10 Ensembl.R80
 ```
