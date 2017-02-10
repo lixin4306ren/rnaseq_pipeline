@@ -13,8 +13,8 @@ perl Run_OSA_all_modules.pl sample.list [output_dir] [database_dir] [genome_vers
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S1
 /home/others/xli/raw_data/2016_08_01_ZY/RNA-Seq/S2
 ```
-`genome_version`默认基因组版本`Human.B37.3`
-`gene_model_version`默认版本为`RefGene`
+`genome_version`默认基因组版本`Human.B37.3`  
+`gene_model_version`默认版本为`RefGene`  
 基因组和基因注释版本对应信息参考此[网页](http://www.arrayserver.com/wiki/index.php?title=A_list_of_compiled_genome_and_gene_model_from_OmicSoft)
 
 
