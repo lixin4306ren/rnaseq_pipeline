@@ -1,4 +1,4 @@
-# RNA-Seq分析流程
+# 基于genome alignment的RNA-Seq分析流程
 ## 安装
 此流程依赖于array suite，安装array suite参考此[网页](http://www.arrayserver.com/wiki/index.php?title=Oshell#Overview)。
 
@@ -40,12 +40,28 @@
 
 
 ## alignment
+如何是human  
 ```
-perl ~/scripts/rnaseq_pipeline/RNA_seq_align_all_module.pl -sample_list sample.list -out_dir /home/others/xli/RNA-Seq -step align
+```
+如果是其他物种，需指明所用genome版本和gene model版本，例如mouse  
+```
+perl ~/scripts/rnaseq_pipeline/Run_OSA_all_modules.pl sample.list ./ /home/others/xli/data/genome Mouse.mm10 Ensembl.R80
 ```
 生成`align.sh`文件和响应的`*.oscript`文件。用`qsub`提交`align.sh`运行alignment步骤。完成后所有结果在`/home/others/xli/RNA-Seq/sample_name`目录。
 
-## 合并bam文件去duplicates
 
-## 生成可供IGV broswer浏览的tdf文件
+
+## kmer-baased alignment free的RNA-Seq分析流程
+本流程基于软件[kallisto](https://pachterlab.github.io/kallisto/)。
+### index genome
+可以此[链接](http://bio.math.berkeley.edu/kallisto/transcriptomes/)下载常用的cDNA序列。
+```
+kallisto index -i transcripts.idx transcripts.fasta.gz
+```
+### quantification
+```
+kallisto quant -i ~/data/cDNA/Homo_sapiens.GRCh38.rel79.cdna.all.idx -o S1 -t 2 -b 100 ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R1.fastq.gz ~/raw_data/2016_08_01_ZY/RNA-Seq/S1/S1.R2.fastq.gz
+```
+
+
 
