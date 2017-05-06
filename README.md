@@ -98,6 +98,6 @@ lane1-6	W
 
 运行rmarkdown报告模版：
 ```
-/opt/apps/R/bin/R -e "rmarkdown::render('rnaseq_report.Rmd')"
+R -e "rmarkdown::render('rnaseq_report.Rmd')"
 ```
 
