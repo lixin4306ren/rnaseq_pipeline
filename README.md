@@ -58,4 +58,34 @@ txi <- tximport(files, type = "kallisto", tx2gene = t2g, reader = read_tsv)
 save(txi,file="txi.rda")          #txi.rda保存结果用于后续基因表达差异分析
 ```
 
+# 使用rmarkdown生成html报告
+安装`knitr`包：
+```
+install.packages('knitr', dependencies = TRUE)
+```
+安装其他相关包：
+```
+install.packages("ggplot2")
+install.packages("readr")
+install.packages("stringr")
+install.packages("pheatmap")
+install.packages("RColorBrewer")
+install.packages("DT")
+
+source("https://bioconductor.org/biocLite.R")
+biocLite("tximport")
+biocLite("DESeq2")
+biocLite("genefilter")
+biocLite("AnnotationDbi")
+biocLite("org.Mm.eg.db") #小鼠基因注释文件
+biocLite("EnrichmentBrowser")
+biocLite("ReportingTools")
+biocLite("KEGGgraph")
+biocLite("org.Mm.eg.db")
+```
+
+运行rmarkdown报告模版：
+```
+/opt/apps/R/bin/R -e "rmarkdown::render('rnaseq_report.Rmd')"
+```
 
