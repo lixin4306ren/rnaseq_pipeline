@@ -59,6 +59,7 @@ save(txi,file="txi.rda")          #txi.rda保存结果用于后续基因表达�
 ```
 
 # 使用rmarkdown生成html报告
+以`/home/others/xli/RNA-Seq2`目录下数据为例。
 安装`knitr`包：
 ```
 install.packages('knitr', dependencies = TRUE)
@@ -82,6 +83,17 @@ biocLite("EnrichmentBrowser")
 biocLite("ReportingTools")
 biocLite("KEGGgraph")
 biocLite("org.Mm.eg.db")
+```
+
+准备样品信息文件`sample2.list`，格式如下：
+```
+sample 	condition
+lane1-1	T
+lane1-2	T
+lane1-3	T
+lane1-4	W
+lane1-5	W
+lane1-6	W
 ```
 
 运行rmarkdown报告模版：
