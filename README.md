@@ -82,7 +82,6 @@ biocLite("org.Mm.eg.db") #小鼠基因注释文件
 biocLite("EnrichmentBrowser")
 biocLite("ReportingTools")
 biocLite("KEGGgraph")
-biocLite("org.Mm.eg.db")
 ```
 
 准备样品信息文件`sample2.list`，格式如下：
