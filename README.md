@@ -60,9 +60,12 @@ save(txi,file="txi.rda")          #txi.rda保存结果用于后续基因表达�
 
 # 使用rmarkdown生成html报告
 以`/home/others/xli/RNA-Seq2`目录下数据为例。
-安装`knitr`包：
+安装`pandoc`，参考http://pandoc.org/。
+安装`knitr`和`rmarkdown`包：
 ```
 install.packages('knitr', dependencies = TRUE)
+install.packages('rmarkdown', dependencies = TRUE)
+
 ```
 安装其他相关包：
 ```
